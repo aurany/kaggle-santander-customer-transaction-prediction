@@ -63,7 +63,7 @@ def get_onehot(x, y, train_idx):
 
     assert(np.isnan(predictions).sum() == 0)
 
-    logger.info(f'Preprocess {name} converted to {categories.shape[1]} group(s)')
+    #logger.info(f'Preprocess {name} converted to {categories.shape[1]} group(s)')
 
     return categories
 
