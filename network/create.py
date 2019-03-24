@@ -1,5 +1,5 @@
 import didactic_meme as model_suite
-from config import Config
+from network.config import Config
 
 
 if __name__ == '__main__':
