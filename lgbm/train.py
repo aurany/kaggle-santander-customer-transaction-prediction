@@ -33,9 +33,9 @@ def train(config, data=None):
     writer = SummaryWriter(log_dir=f'{config.model_dir}/logs')
 
     if data == None:
-        X_train, y_train, X_val, y_val, X_test, y_test, X_submission = get_data()
+        X_train, y_train, X_val, y_val, _, _, _ = get_data()
     else:
-        X_train, y_train, X_val, y_val, X_test, y_test, X_submission = [d for d in data]
+        X_train, y_train, X_val, y_val, _, _, _ = [d for d in data]
 
     logger.info(f'Data imported')
 
