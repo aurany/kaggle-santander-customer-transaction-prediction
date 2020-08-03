@@ -26,12 +26,16 @@ if __name__ == '__main__':
 
     hyperparameter_set = 1
 
-    for num_leaves in [20, 30, 50]:
-        for min_data_in_leaf in [60, 80, 120]:
-            for learning_rate in [0.05, 0.1, 0.2]:
-                for feature_fraction in [0.8, 0.9, 1.0]:
-                    for bagging_fraction in [0.6, 0.8, 1.0]:
-                        for lambda_l2 in [0, 0.01, 0.1]:
+    for num_leaves in [3, 4, 5]:
+        for min_data_in_leaf in [95, 105]:
+            #for learning_rate in [0.001, 0.01, 0.1]:           # 0.001 bäst
+            for learning_rate in [0.01, 0.001]:
+                #for feature_fraction in [0.01, 0.05, 0.1]:     # samma?
+                for feature_fraction in [0.01, 0.04, 0.8]:
+                    #for bagging_fraction in [0.25, 0.5, 0.75]: # 0.25 bäst
+                    for bagging_fraction in [0.15, 0.25]:
+                        #for lambda_l2 in [0.01, 0.05, 0.1]:    # 0.1 bäst
+                        for lambda_l2 in [0, 5]:
 
                             time_start = time.time()
 

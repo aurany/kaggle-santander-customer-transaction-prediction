@@ -20,7 +20,8 @@ logger = logging.getLogger(__name__)
 def tb_logger(writer):
     def callback(env):
         for ds, metric, value, _ in env.evaluation_result_list:
-            writer.add_scalar(f'{ds}/{metric}', value, env.iteration)
+            if env.iteration % 100 == 0:
+                writer.add_scalar(f'{ds}/{metric}', value, env.iteration)
     return callback
 
 def get_data():
@@ -49,11 +50,11 @@ def train(config, data=None):
     gbm = lgb.train(
         params,
         train_ds,
-        10000,
+        150000,
         valid_sets=[train_ds, val_ds],
         callbacks=[tb_logger(writer)],
         verbose_eval=100,
-        early_stopping_rounds=1000,
+        early_stopping_rounds=5000
     )
     logger.info(f'Training finished')
 

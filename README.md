@@ -2,14 +2,16 @@
 # TODO
 
 
-[ ] Hypertrain
-[ ] Finalize features
-[ ] More architectures
+[X] Hypertrain
+[ ] Predictions as features
 
 
 
 
-0.85
+
+LGBM  0.8971 (hyper_0004)
+
+NN    0.85
 {
     "n_epochs": 500,
     "train_batch_size": 2000,

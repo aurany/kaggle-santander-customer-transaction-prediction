@@ -9,7 +9,9 @@ Config = make_config_class(
     metric='auc',
     tree_learner='serial',
     is_training_metric=True,
-    verbose=1,
+    boost_from_average=False,
+    verbose=0,
+    device_type='gpu',
 
     max_depth=-1,
     max_bin=255,            # (255) 200 255
